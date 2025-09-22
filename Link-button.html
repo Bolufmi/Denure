@@ -71,7 +71,7 @@ td:nth-child(even), th:nth-child(odd) {
     <li>Games to be played</li>
   </ul>
 </p>
-<h1 id="Catchy" style="font-size:30px;">My goal is to get things done as soon as possible</h1>
+<h1 id="Catchy" style="font-size:20px;">My goal is to get things done as soon as possible</h1>
 <button onclick="displayResult()">Transform text</button>
 
 <script>
@@ -79,6 +79,27 @@ td:nth-child(even), th:nth-child(odd) {
     document.getElementById("Catchy").innerHTML = "If I can dream it, I can definitely achieve it.";
   }
 </script>
+
+
+<script>
+  function light(sw) {
+    var pic;
+    if (sw == 0) {
+      pic = "pic_bulboff.gif"
+    } else {
+      pic = "pic_bulbon.gif"
+    }
+    document.getElementById('myImage').src = pic;
+  }
+  </script>
+  
+  <img id="myImage" src="pic_bulboff.gif" width="100" height="180">
+  
+  <p>
+  <button type="button" onclick="light(1)">Light On</button>
+  <button type="button" onclick="light(0)">Light Off</button>
+  </p>
+
 </body>
 </html>
 
