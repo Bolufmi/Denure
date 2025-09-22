@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+a:link, a:visited {
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+</style>
+</head>
+<body>
+
+<h2>Link Button</h2>
+<p>A link styled as a button:</p>
+<a href="default.asp" target="_blank">This is a link</a>
+
+
+<style>
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+tr:hover {
+  background-color: #ddd;
+}
+td:nth-child(even), th:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+</style>
+
+<!--- A trick for you to write header in vertical column, creating a table, I so much love HTML code, onto the next--->
+
+<h2>Vertical Table Headers</h2>
+
+<p>The first column becomes table headers if you set the first table cell in each table row to a TH element:</p>
+
+<table style="width:100%">
+  <caption style="text-transform:uppercase; font-family: 'Courier New', Courier, monospace; text-size-adjust:inherit; font-weight: bolder;"> Customer Database</caption>
+  <tr>
+    <th>Firstname</th>
+    <td>Jill</td>
+    <td>Eve</td>
+  </tr>
+  <tr>
+    <th>Lastname</th>
+    <td>Smith</td>
+    <td>Jackson</td>
+  </tr>
+  <tr>
+    <th>Age</th>  
+    <td>50</td>
+    <td>94</td>
+  </tr>
+</table>
+
+<p>
+  <ul style="list-style-type:square; color:red; font-size: 20px; font-family: 'Courier New', Courier, monospace";>
+    <li>Daily Task</li>
+    <li>Videos to be watched</li>
+    <li>Games to be played</li>
+  </ul>
+</p>
+<h1 id="Catchy" style="font-size:30px;">My goal is to get things done as soon as possible</h1>
+<button onclick="displayResult()">Transform text</button>
+
+<script>
+  function displayResult() {
+    document.getElementById("Catchy").innerHTML = "If I can dream it, I can definitely achieve it.";
+  }
+</script>
+</body>
+</html>
+
