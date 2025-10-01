@@ -174,8 +174,80 @@ Listen to <a href="https://trendybeatz.com/download-mp3/59896/adekunle-gold-obim
      
 
       <p id="Demop"></p>
+      
+      <div class="comment-section" style="margin: 20px; padding: 20px; background-color: white; border-radius: 5px;">
+          <h2>Comments</h2>
+          
+          <form id="commentForm" onsubmit="return addComment(event)">
+              <div style="margin-bottom: 15px;">
+                  <label for="name">Name:</label><br>
+                  <input type="text" id="name" name="name" required style="width: 100%; padding: 8px;">
+              </div>
+              
+              <div style="margin-bottom: 15px;">
+                  <label for="comment">Your Comment:</label><br>
+                  <textarea id="comment" name="comment" required style="width: 100%; height: 100px; padding: 8px;"></textarea>
+              </div>
+              
+              <button type="submit" style="background-color: lightblue; padding: 10px 20px; border: none; border-radius: 5px;">Submit Comment</button>
+          </form>
+      
+          <div id="commentsDisplay" style="margin-top: 20px;">
+              <!-- Comments will appear here -->
+          </div>
+      </div>
+      
+      <script>
+      function addComment(event) {
+          event.preventDefault();
+          
+          const name = document.getElementById('name').value;
+          const comment = document.getElementById('comment').value;
+          const date = new Date().toLocaleDateString();
+          
+          const commentHTML = `
+              <div style="border-bottom: 1px solid #ddd; padding: 10px 0;">
+                  <strong>${name}</strong> - <small>${date}</small>
+                  <p>${comment}</p>
+              </div>
+          `;
+          
+          document.getElementById('commentsDisplay').innerHTML += commentHTML;
+          document.getElementById('commentForm').reset();
+          
+          return false;
+      }
+      </script>
 
-   
+    <script>
+    async function fetchSongs() {
+        try {
+            const response = await fetch('http://localhost:5000/api/songs');
+            const songs = await response.json();
+            // Handle displaying songs
+            console.log(songs);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+    
+    async function addSong(songData) {
+        try {
+            const response = await fetch('http://localhost:5000/api/songs', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(songData)
+            });
+            const result = await response.json();
+            console.log('Success:', result);
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    }
+    </script>
+
 
     </body>
     </html>
