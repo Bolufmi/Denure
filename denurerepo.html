@@ -1,7 +1,8 @@
 <!Doctype html>
-<html>
+<html lang="en-US">
 <head>
     <title>This is a trial for html tutorial</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         .p1 {
             background: url(paper.gif) scroll;
@@ -30,6 +31,12 @@
         <li>Testimonials</li>
     </ol>
 
+    <ol style="color: green; background-color: black;">
+              <li>Lemon</li>
+              <li>Ginger</li>
+              <li>Tumeric</li>
+              <li>Peppermint</li>
+             </ol>
     <h2>All things bright and beautiful</h2>
     
     <p class="p1">The things that are impossible, the things that money cannot buy, <br>
@@ -54,5 +61,32 @@
         Jesu ti mo fehinti<br>
         Apata ayeraye.
     </p>
+
+        <p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+const x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(success, error);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function success(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function error() {
+  alert("Sorry, no position available.");
+}
+</script>
 </body>
 </html>

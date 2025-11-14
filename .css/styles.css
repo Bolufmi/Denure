@@ -1,0 +1,15 @@
+body {
+	background: red url('flower.gif') center 100px no-repeat fixed;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+.p {
+	 background: url(paper.gif) scroll;
+            font: bolder;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style: oblique;
+    }
+    .nav {
+        background: fixed;
+            font-size: large;
+            font-style: italic;
+    }
